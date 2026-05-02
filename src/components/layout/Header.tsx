@@ -38,8 +38,8 @@ const Header = () => {
             <Link to="/programs" className="flex items-center gap-2 hover:text-[#E30613] transition-colors uppercase">
               <Radio className="h-4 w-4" /> PROGRAMMES
             </Link>
-            <Link to="/videos" className="flex items-center gap-2 hover:text-[#E30613] transition-colors uppercase">
-              <Music className="h-4 w-4" /> VIDÉOS
+            <Link to="/direct-tv" className="flex items-center gap-2 hover:text-[#E30613] transition-colors uppercase">
+              <PlayCircle className="h-4 w-4" /> DIRECT TV
             </Link>
             <Link to="/category/sport" className="flex items-center gap-2 hover:text-[#E30613] transition-colors uppercase">
               <Trophy className="h-4 w-4" /> SPORTS
@@ -123,7 +123,7 @@ const Header = () => {
           <div className="flex flex-col py-2">
             <Link to="/" className="px-6 py-3 font-bold border-b border-gray-100 hover:text-[#E30613]">LA UNE</Link>
             <Link to="/programs" className="px-6 py-3 font-bold border-b border-gray-100 hover:text-[#E30613]">PROGRAMMES</Link>
-            <Link to="/videos" className="px-6 py-3 font-bold border-b border-gray-100 hover:text-[#E30613]">VIDÉOS</Link>
+            <Link to="/direct-tv" className="px-6 py-3 font-bold border-b border-gray-100 hover:text-[#E30613]">DIRECT TV</Link>
             <Link to="/about" className="px-6 py-3 font-bold border-b border-gray-100 hover:text-[#E30613]">À PROPOS</Link>
             <Link to="/contact" className="px-6 py-3 font-bold hover:text-[#E30613]">CONTACT</Link>
           </div>
@@ -141,9 +141,9 @@ const Header = () => {
             <Radio className="h-5 w-5 mb-1 stroke-[2]" />
             <span className="text-[10px] font-medium">Programmes</span>
           </Link>
-          <Link to="/videos" className={`flex flex-col items-center justify-center w-full h-full ${location.pathname === '/videos' ? 'text-[#E30613]' : 'text-gray-600 hover:text-gray-900'}`}>
-            <Music className="h-5 w-5 mb-1 stroke-[2]" />
-            <span className="text-[10px] font-medium">Vidéos</span>
+          <Link to="/direct-tv" className={`flex flex-col items-center justify-center w-full h-full ${location.pathname === '/direct-tv' ? 'text-[#E30613]' : 'text-gray-600 hover:text-gray-900'}`}>
+            <PlayCircle className="h-5 w-5 mb-1 stroke-[2]" />
+            <span className="text-[10px] font-medium">Direct TV</span>
           </Link>
           <Link to="/category/sport" className={`flex flex-col items-center justify-center w-full h-full ${location.pathname === '/category/sport' ? 'text-[#E30613]' : 'text-gray-600 hover:text-gray-900'}`}>
             <Trophy className="h-5 w-5 mb-1 stroke-[2]" />
@@ -250,7 +250,7 @@ const Header = () => {
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setIsAppModalOpen(false)}></div>
           <div className="bg-white rounded-3xl p-8 max-w-sm w-full relative z-10 shadow-2xl text-center transform animate-in zoom-in duration-300">
             <div className="w-20 h-20 bg-red-50 text-[#E30613] rounded-full flex items-center justify-center mx-auto mb-6">
-               <Music className="h-10 w-10" />
+               <PlayCircle className="h-10 w-10" />
             </div>
             <h3 className="text-xl font-black text-gray-900 mb-2 uppercase tracking-tight">Bientôt disponible !</h3>
             <p className="text-gray-600 mb-8 leading-relaxed">
