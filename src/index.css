@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Ubuntu:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-red: #E30613;
+  --color-brand-white: #FFFFFF;
+  --font-ubuntu: "Ubuntu", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900 font-sans antialiased;
+  }
+
+  /* Styles pour le contenu des articles scrapés */
+  .article-content {
+    @apply font-ubuntu text-base md:text-lg leading-relaxed text-gray-800 text-justify;
+  }
+  .article-content p {
+    @apply mb-6 text-justify;
+  }
+  .article-content h2, .article-content h3 {
+    @apply font-bold text-gray-900 mt-8 mb-4;
+  }
+}
+
