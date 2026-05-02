@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, PlayCircle, Radio, Music, Trophy, ChevronDown, ChevronRight, Home, X, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import { Menu, PlayCircle, Radio, Trophy, ChevronDown, ChevronRight, Home, X, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
 import { useState } from 'react';
 
 const Header = () => {
