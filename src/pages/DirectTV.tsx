@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import VideoPlayer from '../components/player/VideoPlayer';
-import { Radio, Share2, MessageSquare, Clock } from 'lucide-react';
+import { Share2, MessageSquare, Clock } from 'lucide-react';
 
 interface Program {
   id: number;

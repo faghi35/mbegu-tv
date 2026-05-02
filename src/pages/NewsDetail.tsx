@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Clock, Calendar, Share2, ArrowLeft, Bookmark } from 'lucide-react';
+import { Calendar, Share2, ArrowLeft, Bookmark } from 'lucide-react';
 import { API_BASE_URL, MEDIA_BASE_URL } from '../api/config';
 
 interface NewsItem {

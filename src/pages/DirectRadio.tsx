@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Play, Pause, Volume2, Share2, ChevronRight } from 'lucide-react';
+import { Play, Pause, Volume2, Share2, ChevronRight, Music } from 'lucide-react';
 
 interface Program {
   id: number;
