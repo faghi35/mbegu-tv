@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { usePlayer } from '../../context/PlayerContext';
 import VideoPlayer from './VideoPlayer';
-import { X, Maximize2, Play, Pause, Volume2 } from 'lucide-react';
+import { X, Maximize2, Play, Pause } from 'lucide-react';
 
 const GlobalPlayer = () => {
   const { activeType, isPlaying, pause, resume, stop } = usePlayer();
