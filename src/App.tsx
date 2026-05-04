@@ -10,31 +10,35 @@ import DirectTV from './pages/DirectTV';
 import DirectRadio from './pages/DirectRadio';
 import Category from './pages/Category';
 import NewsDetail from './pages/NewsDetail';
-
 import Tag from './pages/Tag';
+import { PlayerProvider } from './context/PlayerContext';
+import GlobalPlayer from './components/player/GlobalPlayer';
 
 function App() {
   return (
-    <Router>
-      <div className="flex flex-col min-h-screen bg-gray-50">
-        <Header />
-        <main className="flex-grow pb-[65px] md:pb-0">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/programs" element={<Programs />} />
-            <Route path="/videos" element={<Videos />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/direct-tv" element={<DirectTV />} />
-            <Route path="/direct-radio" element={<DirectRadio />} />
-            <Route path="/category/:categoryName" element={<Category />} />
-            <Route path="/tag/:tagSlug" element={<Tag />} />
-            <Route path="/news/:slug" element={<NewsDetail />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <PlayerProvider>
+      <Router>
+        <div className="flex flex-col min-h-screen bg-gray-50">
+          <Header />
+          <main className="flex-grow pb-[65px] md:pb-0">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/programs" element={<Programs />} />
+              <Route path="/videos" element={<Videos />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/direct-tv" element={<DirectTV />} />
+              <Route path="/direct-radio" element={<DirectRadio />} />
+              <Route path="/category/:categoryName" element={<Category />} />
+              <Route path="/tag/:tagSlug" element={<Tag />} />
+              <Route path="/news/:slug" element={<NewsDetail />} />
+            </Routes>
+          </main>
+          <GlobalPlayer />
+          <Footer />
+        </div>
+      </Router>
+    </PlayerProvider>
   );
 }
 

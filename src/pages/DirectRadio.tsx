@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Play, Pause, Volume2, Share2, ChevronRight, Music } from 'lucide-react';
+import { usePlayer } from '../context/PlayerContext';
 
 interface Program {
   id: number;
@@ -10,15 +11,14 @@ interface Program {
 }
 
 const DirectRadio = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const { isPlaying, playRadio, pause, resume } = usePlayer();
   const [volume, setVolume] = useState(80);
   const [schedule, setSchedule] = useState<Program[]>([]);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-  const streamUrl = 'https://stream.zeno.fm/skc0rbglpyctv';
 
   useEffect(() => {
     document.body.style.backgroundColor = '#ffffff';
     fetchPrograms();
+    playRadio(); // Set radio as active stream
     return () => {
       document.body.style.backgroundColor = '';
     };
@@ -35,22 +35,17 @@ const DirectRadio = () => {
   };
 
   const togglePlay = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
+    if (isPlaying) {
+      pause();
+    } else {
+      resume();
     }
   };
 
   const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newVolume = parseInt(e.target.value);
     setVolume(newVolume);
-    if (audioRef.current) {
-      audioRef.current.volume = newVolume / 100;
-    }
+    // In a real app, we'd pass this volume to the GlobalPlayer via context
   };
 
   return (
@@ -166,8 +161,6 @@ const DirectRadio = () => {
           )}
         </div>
       </div>
-
-      <audio ref={audioRef} src={streamUrl} />
     </div>
   );
 };

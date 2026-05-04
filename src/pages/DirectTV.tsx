@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import VideoPlayer from '../components/player/VideoPlayer';
 import { Share2, MessageSquare, Clock } from 'lucide-react';
+import { usePlayer } from '../context/PlayerContext';
 
 interface Program {
   id: number;
@@ -11,9 +12,11 @@ interface Program {
 
 const DirectTV = () => {
   const [schedule, setSchedule] = useState<Program[]>([]);
+  const { playTV } = usePlayer();
 
   useEffect(() => {
     fetchPrograms();
+    playTV(); // Signal that TV is active
   }, []);
 
   const fetchPrograms = async () => {

@@ -36,7 +36,7 @@ const Header = () => {
           <nav className="hidden lg:flex items-center space-x-6 text-[13px] font-bold text-gray-900 tracking-wide">
             <Link to="/" className="hover:text-[#E30613] transition-colors uppercase">LA UNE</Link>
             <Link to="/programs" className="flex items-center gap-2 hover:text-[#E30613] transition-colors uppercase">
-              <Radio className="h-4 w-4" /> PROGRAMMES
+              <Radio className="h-4 w-4" /> ÉMISSIONS
             </Link>
             <Link to="/direct-tv" className="flex items-center gap-2 hover:text-[#E30613] transition-colors uppercase">
               <PlayCircle className="h-4 w-4" /> DIRECT TV
@@ -122,7 +122,7 @@ const Header = () => {
         <div className="hidden md:block bg-white border-b border-gray-200 absolute w-full shadow-xl">
           <div className="flex flex-col py-2">
             <Link to="/" className="px-6 py-3 font-bold border-b border-gray-100 hover:text-[#E30613]">LA UNE</Link>
-            <Link to="/programs" className="px-6 py-3 font-bold border-b border-gray-100 hover:text-[#E30613]">PROGRAMMES</Link>
+            <Link to="/programs" className="px-6 py-3 font-bold border-b border-gray-100 hover:text-[#E30613]">ÉMISSIONS</Link>
             <Link to="/direct-tv" className="px-6 py-3 font-bold border-b border-gray-100 hover:text-[#E30613]">DIRECT TV</Link>
             <Link to="/about" className="px-6 py-3 font-bold border-b border-gray-100 hover:text-[#E30613]">À PROPOS</Link>
             <Link to="/contact" className="px-6 py-3 font-bold hover:text-[#E30613]">CONTACT</Link>
@@ -139,7 +139,7 @@ const Header = () => {
           </Link>
           <Link to="/programs" className={`flex flex-col items-center justify-center w-full h-full ${location.pathname === '/programs' ? 'text-[#E30613]' : 'text-gray-600 hover:text-gray-900'}`}>
             <Radio className="h-5 w-5 mb-1 stroke-[2]" />
-            <span className="text-[10px] font-medium">Programmes</span>
+            <span className="text-[10px] font-medium">Émissions</span>
           </Link>
           <Link to="/direct-tv" className={`flex flex-col items-center justify-center w-full h-full ${location.pathname === '/direct-tv' ? 'text-[#E30613]' : 'text-gray-600 hover:text-gray-900'}`}>
             <PlayCircle className="h-5 w-5 mb-1 stroke-[2]" />
